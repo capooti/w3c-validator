@@ -8,7 +8,7 @@
 = {blogpost-title}
 
 ifdef::blogpost[]
-*Published*: 2011-05-01
+*Published*: 2011-04-29
 endif::blogpost[]
 
 A command-line script (written in Python) for validating HTML and CSS
@@ -39,6 +39,10 @@ The script command syntax is:
 
 - The optional `--verbose` option will print information about what is
   going on internally.
+- Names with a `.css` extension are treated as CSS, all other names
+  are assumed to contain HTML.
+- Names starting with `http://` are assumed to be publically
+  accessible URLs, all other names are assumed to be local file names.
 - Any mix of one or more local files or HTTP URLs can be specified.
 - If one or more files fail validation then the exit status will be 1,
   if no errors occurs the exits status will be zero.
