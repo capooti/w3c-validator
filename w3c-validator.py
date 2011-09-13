@@ -98,7 +98,10 @@ if __name__ == '__main__':
                 message('warnings: %d' % warningcount)
         else:
             for msg in result['messages']:
-                message('%(type)s: line %(lastLine)d: %(message)s' % msg)
+                if 'lastline' in msg:
+                    message('%(type)s: line %(lastLine)d: %(message)s' % msg)
+                else:
+                    message('%(type)s: %(message)s' % msg)
                 if msg['type'] == 'error':
                     errors += 1
                 else:
